@@ -1,0 +1,81 @@
+@import "reset";
+@import "box";
+@import "common-mixin";
+$headerHeight: 4rem;
+$navActColor: #1d54af;
+.header{
+  position: relative;
+  height:$headerHeight;
+  position:fixed;
+  top:0;
+  box-shadow:0 10px 20px #888888;
+}
+.nav{
+  height:100%;
+  background: #FFF;
+  color:#000;
+}
+.nav-border{
+  height:.2rem;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background-color: $navActColor;
+  @include transition(all .167s);
+}
+.fade-enter{
+  opacity:0;
+  @include transform(translateX(100%))
+}
+.fade-enter-active{
+  transition: all .5s;
+}
+.fade-enter,.fade-enter-active{
+  display:block;
+}
+.fade-lave,.fade-leave-active{
+  display:none;
+}
+.nav-item{
+  height:100%;
+  font-size:1.5rem;
+  width:33.33%;
+  text-align: center;
+  line-height:$headerHeight;
+  &.nav-item-act{
+    color:$navActColor;
+    font-size:1.6rem;
+    font-weight:700;
+  }
+}
+@for $i from 1 to 12{
+  .item:nth-child(#{$i}){
+
+  }
+}
+.container{
+  margin-top:$headerHeight;
+  width:100%;
+  padding-top:1rem;
+  .list{
+    width:100%;
+    height:100%;
+    .item{
+      //@include transform(translateX(100%));
+      //@include transition(all 2s ease-in-out);
+      color:#666;
+      margin:.5rem;
+      padding:.5rem;
+      font-size:1.5rem;
+      border-top:.1rem dashed #ccc;
+    }
+  }
+  .music{
+    .item{
+      img{
+        width:5rem;
+        height:5rem;
+      }
+    }
+  }
+}
